@@ -18,20 +18,23 @@ beta= 1-alpha;                  %% a+b=1
 G = beta /(z-alpha);            %% IIR Low Pass Filter Equation
 [num,den]=tfdata(G,'v');        %% Transfer Function
 hold on
-%   freqz(num,den);
+%   freqz(num,den);             %% frequency Respone
   pzmap(num,den);
 end
 
 case(unstable)
            
- for alpha=1.1:0.05:2; %% 0<alpha<1 important stabilty this is  unstable
+ for alpha=1.1:0.05:2;         %% 0<alpha<1 important stabilty this is  unstable
 beta= 1-alpha;
-G = beta /(z-alpha); %% low pass filter equation
+G = beta /(z-alpha);           %% low pass filter equation
 [num,den]=tfdata(G,'v');
 hold on
-%  freqz(num,den);
+%  freqz(num,den);             %% frequency Respone
 pzmap(num,den);
 
  end
+ 
+ 
+ 
 
 end
